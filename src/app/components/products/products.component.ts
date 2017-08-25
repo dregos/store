@@ -18,10 +18,6 @@ export class ProductsComponent {
     this.products = productsService.getProducts();
   }
 
-  ngOnChanges(changes: SimpleChanges){
-    console.log(changes);
-  }
-
   remove(product){
     this.products = this.productsService.removeProduct(product);
   }
@@ -32,7 +28,7 @@ export class ProductsComponent {
   }
 
   removeOne(product){
-    this.productsService.removeOneProduct(product);
+    product = this.productsService.removeOneProduct(product);
   }
 
   addOne(product){
