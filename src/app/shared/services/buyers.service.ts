@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Buyer } from '../../components/buyers/buyer'
-
+import { Product } from '../../components/products/product';
 
 @Injectable()
 export class BuyersService {
 
   private buyers: Buyer[] = [];
   private buyer:Buyer = new Buyer(null, '','','');
+  private products: Product[] = [];
 
   constructor() {
     this.buyers = [
@@ -43,5 +44,9 @@ export class BuyersService {
       return buyer.id != b.id;
     });
     return this.buyers;
+  }
+
+  public buyProduct(buyer, product){
+    return buyer.products.push(product);
   }
 }

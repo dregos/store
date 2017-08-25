@@ -29,5 +29,9 @@ export class SellingComponent implements OnInit {
   	});
   }
 
+  sell(product, buyer){
+    this.buyersService.buyProduct(buyer,product);
+    this.productsService.removeOneProduct(product);
+  }
 
 }
