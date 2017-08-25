@@ -5,6 +5,7 @@ import { BuyersComponent } from './components/buyers/buyers.component';
 import { BuyersDetailsComponent } from './components/buyers/buyers-details/buyers-details.component';
 import { ProductsComponent } from './components/products/products.component';
 
+import { SellingComponent } from './components/selling/selling.component';
 
 const appRoutes: Routes = [
   {
@@ -23,6 +24,10 @@ const appRoutes: Routes = [
   {
     path: 'products',
     component: ProductsComponent
+  },
+  {
+    path: 'products/:id',
+    component: SellingComponent,
   },
 ];
 

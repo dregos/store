@@ -10,7 +10,7 @@
 		<tr>
 			<th>Name</th>
 			<th>Quantity left</th>
-			<th>Actions</th>
+			<th colspan="3">Actions</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -24,6 +24,10 @@
 				<button class="btn btn-danger btn-sm" (click)="addOne(product)">+</button>
 				<button *ngIf="product.quantity > 0" class="btn btn-danger btn-sm" (click)="removeOne(product)">-</button>
 			</td>
+			<td>
+				<a [routerLink]="['/products', product.id]">Sell</a>
+			</td>
+
 		</tr>
 	</tbody>
 </table>

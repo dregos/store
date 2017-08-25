@@ -1,0 +1,16 @@
+<h3>Product to sell</h3>
+<div class="form-group col-md-5 pl-0 my-lg-4 my-2">
+  <ul class="list-group">
+  	<li class="list-group-item">Name: {{ product.name }}</li>
+  	<li class="list-group-item">Quantity: {{ product.quantity }}</li>
+  </ul>
+</div>
+<h5>Select a buyer</h5>
+<div class="form-group col-md-5 pl-0 my-lg-4 my-2">
+  <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+    <option *ngFor="let buyer of buyers" value="{{buyer.id}}">{{buyer.first_name}} {{buyer.last_name}}</option>
+  </select>
+</div>
+<div class="form-group col-md-5 pl-0 my-lg-4 my-2">
+  <button class="btn btn-danger btn-sm" (click)="sell()">Confirm</button>
+</div>
