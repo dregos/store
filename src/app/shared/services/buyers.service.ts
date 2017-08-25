@@ -36,8 +36,12 @@ export class BuyersService {
 	}
 
   public removeBuyer(buyer){
-    const index = this.buyers.indexOf(buyer);
-    this.buyers.splice(index, 1);
-
+    const index = this.buyers.findIndex((b) => {
+      return buyer.id === b.id;
+    });
+    this.buyers = this.buyers.filter(b => {
+      return buyer.id != b.id;
+    });
+    return this.buyers;
   }
 }

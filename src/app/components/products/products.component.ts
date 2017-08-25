@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges} from '@angular/core';
 import { ProductsService } from '../../shared/services/products.service';
 import { Product } from './product';
 
@@ -18,8 +18,12 @@ export class ProductsComponent {
     this.products = productsService.getProducts();
   }
 
+  ngOnChanges(changes: SimpleChanges){
+    console.log(changes);
+  }
+
   remove(product){
-    this.productsService.removeProduct(product);
+    this.products = this.productsService.removeProduct(product);
   }
 
   add(){

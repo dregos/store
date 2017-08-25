@@ -1,11 +1,11 @@
 <h1>Buyers</h1>
 
-<!-- zbog ovog načina filtera, Remove akcija ne radi, kako treba
+
 <div class="input-group col-md-5 pl-0 my-lg-4 my-2">
 	<span class="input-group-addon">Filter by name</span>
 	<input [(ngModel)]="searchValue" class="form-control">
 </div>
--->
+
 
 
 <table class="table table-striped">
@@ -17,7 +17,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr *ngFor="let buyer of buyers">
+		<tr *ngFor="let buyer of buyers | filter: 'first_name' : searchValue">
 			<td class="align-middle">
 				<a [routerLink]="['/buyers', buyer.id]">{{ buyer.first_name }} {{ buyer.last_name }}</a>
 			</td>

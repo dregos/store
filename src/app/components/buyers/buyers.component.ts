@@ -20,7 +20,7 @@ export class BuyersComponent {
   }
 
   remove(buyer){
-    this.buyersService.removeBuyer(buyer);
+    this.buyers = this.buyersService.removeBuyer(buyer);
   }
 
   add(){

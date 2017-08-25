@@ -38,8 +38,13 @@ export class ProductsService {
 	}
 
   public removeProduct(product){
-    const index = this.products.indexOf(product);
-    this.products.splice(index, 1);
+    const index = this.products.findIndex((p) => {
+      return product.id === p.id;
+    });
+    this.products = this.products.filter(p => {
+      return product.id != p.id;
+    });
+    return this.products;
   }
 
   public addOneProduct(product){
