@@ -1,10 +1,11 @@
 <h1>Buyers</h1>
 
+<!-- zbog ovog načina filtera, Remove akcija ne radi, kako treba
 <div class="input-group col-md-5 pl-0 my-lg-4 my-2">
 	<span class="input-group-addon">Filter by name</span>
 	<input [(ngModel)]="searchValue" class="form-control">
 </div>
-
+-->
 
 
 <table class="table table-striped">
@@ -26,8 +27,29 @@
 	</tbody>
 </table>
 
-<div class="input-group col-md-5 pl-0 my-lg-4 my-2">
-	<button type="button" class="btn btn-primary" (click)="addBuyer()">Add buyer</button>
+<div class="form-group col-md-5 pl-0 my-lg-4 my-2">
+	<button type="button" class="btn btn-primary" (click)="showAddBuyer = !showAddBuyer">Add buyer</button>
+	<div [hidden]="!showAddBuyer">
+		<form>
+			<hr>
+			<div class="form-group">
+				<input type="text" class="form-control" id="first_name" placeholder="First name"
+				name="first_name" [(ngModel)]="newBuyer.first_name">
+			</div>
+			<div class="form-group">
+
+				<input type="text" class="form-control" id="last_name" placeholder="Last name"
+				name="last_name" [(ngModel)]="newBuyer.last_name">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" id="email" placeholder="Email"
+				name="email" [(ngModel)]="newBuyer.email">
+			</div>
+			<div class="form-group">
+					<button type="button" class="btn btn-primary" (click)="add()">Save</button>
+			</div>
+		</form>
+	</div>
 </div>
 
 <router-outlet></router-outlet>

@@ -11,6 +11,7 @@ export class BuyersComponent {
 
   private buyers : Buyer[] = [];
   private searchValue:string = '';
+  private newBuyer: Buyer = new Buyer(null,'', '', '');
 
   constructor(private buyersService: BuyersService) {
     this.buyers = buyersService.getBuyers();
@@ -21,7 +22,8 @@ export class BuyersComponent {
   }
 
   add(){
-    //this.buyersService.addBuyer(0,'','','','','');
+    this.buyersService.addBuyer(this.newBuyer);
+    this.newBuyer = new Buyer(null,'', '', '');
   }
 
 }

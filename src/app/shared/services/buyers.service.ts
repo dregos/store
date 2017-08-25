@@ -6,6 +6,7 @@ import { Buyer } from '../../components/buyers/buyer'
 export class BuyersService {
 
   private buyers: Buyer[] = [];
+  private buyer:Buyer = new Buyer(null, '','','');
 
   constructor() {
     this.buyers = [
@@ -20,13 +21,17 @@ export class BuyersService {
     return this.buyers
   }
 
-  public addBuyer(id, first_name, last_name, email){
-    return "";
+  public addBuyer(buyer){
+    const index = this.buyers.length-1;
+    let lastBuyer:Buyer = this.buyers[index];
+    buyer.id = lastBuyer.id + 1;
+    this.buyers.push(buyer);
+    this.buyer = new Buyer(null, '','','');
 	}
 
   public removeBuyer(buyer){
     const index = this.buyers.indexOf(buyer);
     this.buyers.splice(index, 1);
-  
+
   }
 }
