@@ -41,4 +41,12 @@ export class ProductsService {
     const index = this.products.indexOf(product);
     this.products.splice(index, 1);
   }
+
+  public addOneProduct(product){
+    product.quantity = product.quantity+1;
+  }
+
+  public removeOneProduct(product){
+    product.quantity = product.quantity-1;
+  }
 }

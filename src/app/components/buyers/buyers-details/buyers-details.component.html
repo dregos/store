@@ -11,14 +11,12 @@
 		<tr>
 			<th>Name</th>
 			<th>Quantity</th>
-			<th>Actions</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr *ngFor="let product of buyer.products">
 			<td class="align-middle"> {{ product.name }} </td>
 			<td class="align-middle">{{ product.quantity }}</td>
-			<td><button class="btn btn-danger btn-sm" (click)="remove(product)">Remove</button></td>
 		</tr>
 	</tbody>
 </table>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BuyersService } from '../../shared/services/buyers.service';
 import { Buyer } from './buyer';
-
+import { ProductsService } from '../../shared/services/products.service';
+import { Product } from '../products/product';
 
 @Component({
   selector: 'app-buyers',
@@ -13,7 +14,8 @@ export class BuyersComponent {
   private searchValue:string = '';
   private newBuyer: Buyer = new Buyer(null,'', '', '');
 
-  constructor(private buyersService: BuyersService) {
+  constructor(private buyersService: BuyersService,
+              private productsService: ProductsService) {
     this.buyers = buyersService.getBuyers();
   }
 
@@ -24,6 +26,14 @@ export class BuyersComponent {
   add(){
     this.buyersService.addBuyer(this.newBuyer);
     this.newBuyer = new Buyer(null,'', '', '');
+  }
+
+  removeOneProduct(product){
+    this.productsService.removeOneProduct(product);
+  }
+
+  addOneProduct(product){
+    this.productsService.addOneProduct(product);
   }
 
 }

@@ -27,4 +27,12 @@ export class ProductsComponent {
     this.newProduct = new Product(null,'', null);
   }
 
+  removeOne(product){
+    this.productsService.removeOneProduct(product);
+  }
+
+  addOne(product){
+    this.productsService.addOneProduct(product);
+  }
+
 }
