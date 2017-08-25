@@ -1,3 +1,18 @@
-<p>
-  products works!
-</p>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Quantity left</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let product of products">
+			<td class="align-middle">
+				<a [routerLink]="['/products', product.id]">{{ product.name }}</a>
+			</td>
+			<td class="align-middle">{{ product.quantity }}</td>
+			<td><button class="btn btn-danger btn-sm" (click)="remove(product)">Remove</button></td>
+		</tr>
+	</tbody>
+</table>

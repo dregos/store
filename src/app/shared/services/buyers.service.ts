@@ -21,6 +21,12 @@ export class BuyersService {
     return this.buyers
   }
 
+  public getBuyerById(id){
+    this.buyer = this.buyers.find(buyer => buyer['id'] == id);
+    //console.log('Found buyer :' + this.buyer.id);
+    return this.buyer;
+  }
+
   public addBuyer(buyer){
     const index = this.buyers.length-1;
     let lastBuyer:Buyer = this.buyers[index];

@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { BuyersComponent } from './components/buyers/buyers.component';
+import { BuyersDetailsComponent } from './components/buyers/buyers-details/buyers-details.component';
 import { ProductsComponent } from './components/products/products.component';
+
 
 const appRoutes: Routes = [
   {
@@ -13,6 +15,10 @@ const appRoutes: Routes = [
   {
     path: 'buyers',
     component: BuyersComponent
+  },
+  {
+    path: 'buyers/:id',
+    component: BuyersDetailsComponent,
   },
   {
     path: 'products',
