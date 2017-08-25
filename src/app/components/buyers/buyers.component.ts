@@ -1,15 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { BuyersService } from '../../shared/services/buyers.service';
+import { Buyer } from './buyer';
+
 
 @Component({
   selector: 'app-buyers',
-  templateUrl: './buyers.component.html',
-  styleUrls: ['./buyers.component.css']
+  templateUrl: './buyers.component.html'
 })
-export class BuyersComponent implements OnInit {
+export class BuyersComponent {
 
-  constructor() { }
+  private buyers : Buyer[] = [];
+  private searchValue:string = '';
 
-  ngOnInit() {
+  constructor(private buyersService: BuyersService) {
+    this.buyers = buyersService.getBuyers();
+  }
+
+  remove(buyer){
+    this.buyersService.removeBuyer(buyer);
+  }
+
+  add(){
+    //this.buyersService.addBuyer(0,'','','','','');
   }
 
 }
